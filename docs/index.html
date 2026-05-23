@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SEO Dashboard</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, 'Helvetica Neue', sans-serif; background: #f5f5f7; color: #1d1d1f; padding: 24px; }
+  h1 { font-size: 28px; font-weight: 700; margin-bottom: 4px; }
+  .subtitle { font-size: 14px; color: #86868b; margin-bottom: 24px; }
+  .grid { display: flex; flex-direction: column; gap: 20px; max-width: 1200px; margin: 0 auto; }
+  .card { background: #fff; border-radius: 16px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .card h2 { font-size: 20px; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .card h3 { font-size: 14px; font-weight: 600; color: #86868b; margin: 16px 0 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .badge { font-size: 11px; font-weight: 500; background: #f0f0f5; color: #86868b; padding: 2px 8px; border-radius: 6px; }
+  .stats { display: flex; gap: 24px; margin-bottom: 8px; }
+  .stat { text-align: center; }
+  .stat-value { font-size: 32px; font-weight: 700; color: #1d1d1f; }
+  .stat-label { font-size: 12px; color: #86868b; margin-top: 2px; }
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { text-align: left; padding: 8px 10px; border-bottom: 2px solid #f0f0f5; font-weight: 600; color: #86868b; font-size: 11px; text-transform: uppercase; }
+  td { padding: 7px 10px; border-bottom: 1px solid #f5f5f7; }
+  .num { text-align: right; font-variant-numeric: tabular-nums; }
+  .danger { color: #ff3b30; font-weight: 600; }
+  .warn { color: #ff9500; font-weight: 600; }
+  .good { color: #34c759; font-weight: 600; }
+  .muted { color: #86868b; }
+  .trend { margin: 20px 0; }
+  .trend-bar { display: flex; align-items: end; gap: 3px; height: 60px; }
+  .trend-col { flex: 1; background: #007aff; border-radius: 3px 3px 0 0; min-width: 8px; transition: height 0.3s; position: relative; }
+  .trend-col:hover::after { content: attr(data-label); position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); background: #1d1d1f; color: #fff; padding: 2px 6px; border-radius: 4px; font-size: 10px; white-space: nowrap; }
+  .trend-dates { display: flex; gap: 3px; font-size: 9px; color: #86868b; margin-top: 4px; }
+  .trend-dates span { flex: 1; text-align: center; overflow: hidden; }
+  @media (min-width: 768px) { .grid { display: grid; grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="grid">
+  <div>
+    <h1>SEO Dashboard</h1>
+    <div class="subtitle">期間: 2026-04-25 ~ 2026-05-23 ・ 最終更新: 2026-05-23</div>
+  </div>
+
+  
+    <div class="card">
+      <h2>スマートプラン <span class="badge">smaplan</span></h2>
+      <div class="stats">
+        <div class="stat"><div class="stat-value">3</div><div class="stat-label">Clicks</div></div>
+        <div class="stat"><div class="stat-value">188</div><div class="stat-label">Impressions</div></div>
+        <div class="stat"><div class="stat-value">1.6%</div><div class="stat-label">CTR</div></div>
+      </div>
+
+      <h3>Top Queries</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Query</th><th>Imp.</th><th>Click</th><th>CTR</th><th>Pos.</th></tr></thead>
+          <tbody><tr>
+        <td>スマホプラン 安く 通信品質 落とさない 方法</td>
+        <td class="num">10</td>
+        <td class="num">0</td>
+        <td class="num danger">0.0%</td>
+        <td class="num warn">18.3</td>
+      </tr><tr>
+        <td>ドコモホームルーター ランキング</td>
+        <td class="num">9</td>
+        <td class="num">0</td>
+        <td class="num danger">0.0%</td>
+        <td class="num ">68.3</td>
+      </tr><tr>
+        <td>aiを使って通信料金の最適プランを自動で提案してもらえるの？</td>
+        <td class="num">7</td>
+        <td class="num">0</td>
+        <td class="num danger">0.0%</td>
+        <td class="num good">4.1</td>
+      </tr><tr>
+        <td>スマホ代を安くするにはどうすればいい？</td>
+        <td class="num">6</td>
+        <td class="num">0</td>
+        <td class="num danger">0.0%</td>
+        <td class="num ">40.5</td>
+      </tr><tr>
+        <td>日本 スマホ代 節約 方法 2026</td>
+        <td class="num">3</td>
+        <td class="num">0</td>
+        <td class="num danger">0.0%</td>
+        <td class="num warn">18.7</td>
+      </tr><tr>
+        <td>スマホプラン診断</td>
+        <td class="num">2</td>
+        <td class="num">0</td>
+        <td class="num danger">0.0%</td>
+        <td class="num warn">11.0</td>
+      </tr><tr>
+        <td>ホームルーター 速度</td>
+        <td class="num">2</td>
+        <td class="num">0</td>
+        <td class="num danger">0.0%</td>
+        <td class="num ">40.5</td>
+      </tr><tr>
+        <td>5g ホームルーター おすすめ 2026</td>
+        <td class="num">1</td>
+        <td class="num">0</td>
+        <td class="num danger">0.0%</td>
+        <td class="num warn">15.0</td>
+      </tr><tr>
+        <td>スマホ コスト削減</td>
+        <td class="num">1</td>
+        <td class="num">0</td>
+        <td class="num danger">0.0%</td>
+        <td class="num ">39.0</td>
+      </tr><tr>
+        <td>ホーム ルーター 光 回線 比較</td>
+        <td class="num">1</td>
+        <td class="num">0</td>
+        <td class="num danger">0.0%</td>
+        <td class="num ">29.0</td>
+      </tr></tbody>
+        </table>
+      </div>
+
+      <h3>Top Pages</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Page</th><th>Imp.</th><th>Click</th><th>CTR</th><th>Pos.</th></tr></thead>
+          <tbody><tr>
+          <td title="https://smaplan.com/">/</td>
+          <td class="num">83</td>
+          <td class="num">3</td>
+          <td class="num ">3.6%</td>
+          <td class="num good">3.6</td>
+        </tr><tr>
+          <td title="https://smaplan.com/blog/save-money">/blog/save-money</td>
+          <td class="num">39</td>
+          <td class="num">0</td>
+          <td class="num danger">0.0%</td>
+          <td class="num warn">18.6</td>
+        </tr><tr>
+          <td title="https://smaplan.com/blog/hikari-vs-home-router">/blog/hikari-vs-home-router</td>
+          <td class="num">31</td>
+          <td class="num">0</td>
+          <td class="num danger">0.0%</td>
+          <td class="num warn">14.6</td>
+        </tr><tr>
+          <td title="https://smaplan.com/blog/home-router-ranking">/blog/home-router-ranking</td>
+          <td class="num">19</td>
+          <td class="num">0</td>
+          <td class="num danger">0.0%</td>
+          <td class="num ">37.1</td>
+        </tr><tr>
+          <td title="https://smaplan.com/carrier/ymobile_simple3_m">/carrier/ymobile_simple3_m</td>
+          <td class="num">13</td>
+          <td class="num">0</td>
+          <td class="num danger">0.0%</td>
+          <td class="num good">9.5</td>
+        </tr><tr>
+          <td title="https://smaplan.com/blog/internet-line-beginners">/blog/internet-line-beginners</td>
+          <td class="num">3</td>
+          <td class="num">0</td>
+          <td class="num danger">0.0%</td>
+          <td class="num warn">14.0</td>
+        </tr></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>ガチャなう <span class="badge">gacha-now</span></h2>
+      <div class="stats">
+        <div class="stat"><div class="stat-value">11</div><div class="stat-label">Clicks</div></div>
+        <div class="stat"><div class="stat-value">70</div><div class="stat-label">Impressions</div></div>
+        <div class="stat"><div class="stat-value">15.7%</div><div class="stat-label">CTR</div></div>
+      </div>
+
+      <h3>Top Queries</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Query</th><th>Imp.</th><th>Click</th><th>CTR</th><th>Pos.</th></tr></thead>
+          <tbody><tr>
+        <td>ガチャガチャ 最新情報</td>
+        <td class="num">5</td>
+        <td class="num">0</td>
+        <td class="num danger">0.0%</td>
+        <td class="num warn">10.4</td>
+      </tr><tr>
+        <td>スポンジボブ ガチャガチャ 新作</td>
+        <td class="num">3</td>
+        <td class="num">0</td>
+        <td class="num danger">0.0%</td>
+        <td class="num warn">11.0</td>
+      </tr><tr>
+        <td>ガチャガチャ 新作情報</td>
+        <td class="num">2</td>
+        <td class="num">0</td>
+        <td class="num danger">0.0%</td>
+        <td class="num warn">11.0</td>
+      </tr><tr>
+        <td>ガチャ新作情報</td>
+        <td class="num">2</td>
+        <td class="num">0</td>
+        <td class="num danger">0.0%</td>
+        <td class="num good">9.5</td>
+      </tr><tr>
+        <td>ガチャ 新作</td>
+        <td class="num">1</td>
+        <td class="num">0</td>
+        <td class="num danger">0.0%</td>
+        <td class="num good">8.0</td>
+      </tr><tr>
+        <td>ガチャ新作</td>
+        <td class="num">1</td>
+        <td class="num">0</td>
+        <td class="num danger">0.0%</td>
+        <td class="num good">8.0</td>
+      </tr><tr>
+        <td>グローグーいっぱいコレクション2</td>
+        <td class="num">1</td>
+        <td class="num">0</td>
+        <td class="num danger">0.0%</td>
+        <td class="num ">34.0</td>
+      </tr><tr>
+        <td>スポンジボブ ガチャガチャ 最新</td>
+        <td class="num">1</td>
+        <td class="num">0</td>
+        <td class="num danger">0.0%</td>
+        <td class="num warn">15.0</td>
+      </tr><tr>
+        <td>今日ガチャガチャ</td>
+        <td class="num">1</td>
+        <td class="num">0</td>
+        <td class="num danger">0.0%</td>
+        <td class="num warn">12.0</td>
+      </tr></tbody>
+        </table>
+      </div>
+
+      <h3>Top Pages</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Page</th><th>Imp.</th><th>Click</th><th>CTR</th><th>Pos.</th></tr></thead>
+          <tbody><tr>
+          <td title="https://gacha-now.net/">/</td>
+          <td class="num">47</td>
+          <td class="num">11</td>
+          <td class="num ">23.4%</td>
+          <td class="num good">6.9</td>
+        </tr><tr>
+          <td title="https://gacha-now.net/brand/spongebob">/brand/spongebob</td>
+          <td class="num">9</td>
+          <td class="num">0</td>
+          <td class="num danger">0.0%</td>
+          <td class="num warn">11.6</td>
+        </tr><tr>
+          <td title="https://gacha-now.net/brand/heroaca">/brand/heroaca</td>
+          <td class="num">4</td>
+          <td class="num">0</td>
+          <td class="num danger">0.0%</td>
+          <td class="num good">7.0</td>
+        </tr><tr>
+          <td title="https://gacha-now.net/item/one-piece-3-0d891481">/item/one-piece-3-0d891481</td>
+          <td class="num">3</td>
+          <td class="num">0</td>
+          <td class="num danger">0.0%</td>
+          <td class="num warn">16.0</td>
+        </tr><tr>
+          <td title="https://gacha-now.net/item/gacha-34eb5e6a">/item/gacha-34eb5e6a</td>
+          <td class="num">2</td>
+          <td class="num">0</td>
+          <td class="num danger">0.0%</td>
+          <td class="num warn">16.0</td>
+        </tr><tr>
+          <td title="https://gacha-now.net/brand/madoka">/brand/madoka</td>
+          <td class="num">1</td>
+          <td class="num">0</td>
+          <td class="num danger">0.0%</td>
+          <td class="num good">4.0</td>
+        </tr><tr>
+          <td title="https://gacha-now.net/item/gacha-0fc3ee2b">/item/gacha-0fc3ee2b</td>
+          <td class="num">1</td>
+          <td class="num">0</td>
+          <td class="num danger">0.0%</td>
+          <td class="num ">40.0</td>
+        </tr><tr>
+          <td title="https://gacha-now.net/item/gacha-2ce24906">/item/gacha-2ce24906</td>
+          <td class="num">1</td>
+          <td class="num">0</td>
+          <td class="num danger">0.0%</td>
+          <td class="num ">47.0</td>
+        </tr><tr>
+          <td title="https://gacha-now.net/item/gacha-38beaa7c">/item/gacha-38beaa7c</td>
+          <td class="num">1</td>
+          <td class="num">0</td>
+          <td class="num danger">0.0%</td>
+          <td class="num good">8.0</td>
+        </tr><tr>
+          <td title="https://gacha-now.net/item/gacha-4529de6a">/item/gacha-4529de6a</td>
+          <td class="num">1</td>
+          <td class="num">0</td>
+          <td class="num danger">0.0%</td>
+          <td class="num ">34.0</td>
+        </tr></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>オレのコスメ <span class="badge">orenocosme</span></h2>
+      <div class="stats">
+        <div class="stat"><div class="stat-value">2</div><div class="stat-label">Clicks</div></div>
+        <div class="stat"><div class="stat-value">59</div><div class="stat-label">Impressions</div></div>
+        <div class="stat"><div class="stat-value">3.4%</div><div class="stat-label">CTR</div></div>
+      </div>
+
+      <h3>Top Queries</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Query</th><th>Imp.</th><th>Click</th><th>CTR</th><th>Pos.</th></tr></thead>
+          <tbody><tr>
+        <td>メンズコスメ 口コミ</td>
+        <td class="num">49</td>
+        <td class="num">0</td>
+        <td class="num danger">0.0%</td>
+        <td class="num ">25.9</td>
+      </tr><tr>
+        <td>メンズ クリーム 口コミ</td>
+        <td class="num">2</td>
+        <td class="num">0</td>
+        <td class="num danger">0.0%</td>
+        <td class="num ">36.0</td>
+      </tr></tbody>
+        </table>
+      </div>
+
+      <h3>Top Pages</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Page</th><th>Imp.</th><th>Click</th><th>CTR</th><th>Pos.</th></tr></thead>
+          <tbody><tr>
+          <td title="https://oreno-cosme.com/">/</td>
+          <td class="num">58</td>
+          <td class="num">2</td>
+          <td class="num ">3.4%</td>
+          <td class="num ">24.6</td>
+        </tr><tr>
+          <td title="https://oreno-cosme.com/products?brand=null-cosme">/products?brand=null-cosme</td>
+          <td class="num">1</td>
+          <td class="num">0</td>
+          <td class="num danger">0.0%</td>
+          <td class="num good">1.0</td>
+        </tr></tbody>
+        </table>
+      </div>
+    </div>
+</div>
+</body>
+</html>
