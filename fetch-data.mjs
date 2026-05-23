@@ -29,9 +29,14 @@ const SITES = [
 function getAuth() {
   const creds = JSON.parse(readFileSync(CLIENT_PATH, "utf-8"));
   const { client_id, client_secret } = creds.installed || creds.web;
-  const oauth2 = new google.auth.OAuth2(client_id, client_secret);
+  const redirect_uri = "http://localhost:3939/callback";
+  const oauth2 = new google.auth.OAuth2(client_id, client_secret, redirect_uri);
   const tokens = JSON.parse(readFileSync(TOKEN_PATH, "utf-8"));
   oauth2.setCredentials(tokens);
+  oauth2.on("tokens", (newTokens) => {
+    const merged = { ...tokens, ...newTokens };
+    writeFileSync(TOKEN_PATH, JSON.stringify(merged, null, 2));
+  });
   return oauth2;
 }
 
