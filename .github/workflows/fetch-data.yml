@@ -33,6 +33,7 @@ jobs:
         run: node fetch-data.mjs
 
       - name: Update token if refreshed
+        continue-on-error: true
         run: |
           if [ -f token.json ]; then
             gh secret set GOOGLE_TOKEN < token.json
